@@ -38,4 +38,14 @@ make sure `metadataStyle` is set to 5 (i.e. we tell the tool it should expect QB
 ```
 
 ## Step 3: load the database file into the web app instance
-TODO
+Clone [this repo](https://github.com/justinkeung1018/buzzpoints-ukqb/), which is a fork of [this excellent buzzpoint web app](https://github.com/JemCasey/buzzpoints/). The main differences between this fork and the original repo are:
+- We pass in the filename of the database file via an environment variable
+- The `data` directory contains all buzzpoint data from all tournaments (clear and unclear)
+
+1. Take the `database.db` file generated from the previous step and rename it to something other than `database.db`, e.g. `20231209-arcadia.db`. Copy the file to the `data` directory.
+2. Commit and push the new file to `main`.
+3. Sign into Vercel [here](https://vercel.com/).
+4. Create a new project and import the repo you just cloned. <img width="1917" alt="Screenshot 2024-10-10 at 23 29 18" src="https://github.com/user-attachments/assets/4aed4f6d-4699-4799-81f3-ece7cf850ec8">
+5. Give the project a name. **Very important: set an environment variable called `DATABASE` with the name of the database file as value.** <img width="1916" alt="Screenshot 2024-10-10 at 23 36 19" src="https://github.com/user-attachments/assets/d91d3558-6acd-48f6-bd65-4c113c48f5fd">
+
+Voila! You can change the domain name of the deployed app by clicking on the project > Settings > Domains.
