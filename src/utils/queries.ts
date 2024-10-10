@@ -2,7 +2,7 @@ import { Question, QuestionSet, Tournament } from '@/types';
 import Database, { Statement } from 'better-sqlite3';
 import { cache } from 'react';
 
-const db = new Database('data/database.db');
+const db = new Database(`data/${process.env.DATABASE ?? 'database.db'}`);
 
 export const getCategoriesForTournamentQuery = db.prepare(`
     SELECT  DISTINCT category_main_slug AS category_slug
