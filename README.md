@@ -42,6 +42,7 @@ Clone [this repo](https://github.com/justinkeung1018/buzzpoints-ukqb/), which is
 - We pass in the filename of the database file via an environment variable
 - The `data` directory contains all buzzpoint data from all tournaments (clear and unclear)
 
+Here are the steps:
 1. Take the `database.db` file generated from the previous step and rename it to something other than `database.db`, e.g. `20231209-arcadia.db`. Copy the file to the `data` directory.
 2. Commit and push the new file to `main`.
 3. Sign into Vercel [here](https://vercel.com/).
