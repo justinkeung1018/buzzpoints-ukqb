@@ -50,3 +50,8 @@ Here are the steps:
 5. Give the project a name. **Very important: set an environment variable called `DATABASE` with the name of the database file as value.** <img width="1916" alt="Screenshot 2024-10-10 at 23 36 19" src="https://github.com/user-attachments/assets/d91d3558-6acd-48f6-bd65-4c113c48f5fd">
 
 Voila! You can change the domain name of the deployed app by clicking on the project > Settings > Domains.
+
+### Troubleshooting
+If you are trying to run the web app locally and are having issues with `npm install`, specifically, if `node-gyp` is throwing errors, try the following:
+- Downgrade `npm` to `v18.5.0` using a version manager like `nvm`
+- Make sure the whole path does not contain any spaces, e.g. if your path is `/Users/johndoe/code repos`, remove the space between `code` and `repos`.
