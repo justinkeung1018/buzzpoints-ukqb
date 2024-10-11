@@ -60,10 +60,10 @@ export default function TossupDisplay({ tossup, buzzes, tournament, questionSet,
                         buzzpoint={buzzpoint}
                         setBuzzpoint={setBuzzpoint} />
                 </div>
-                <h3 className="text-xl font-bold my-3">Summary</h3>
+                {/* <h3 className="text-xl font-bold my-3">Summary</h3>
                 <div>
                     <TossupSummaryDisplay tossupSummary={tossupSummary} tournament={tournament} />
-                </div>
+                </div> */}
             </div>
         </div>
     );
