@@ -64,7 +64,7 @@ export default function TossupDisplay({ tossup, buzzes, tournament, questionSet,
                 </div>
             </div>
             <div className="flex justify-center">
-                <div>
+                <div className="overflow-x-auto">
                     <h3 className="text-xl font-bold my-3">Summary</h3>
                     <TossupSummaryDisplay tossupSummary={tossupSummary} tournament={tournament} />
                 </div>

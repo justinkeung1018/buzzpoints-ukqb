@@ -44,7 +44,7 @@ export default function BonusDisplay({ parts, directs, tournament, questionSet, 
             </div>
         </div>
         <div className="flex justify-center">
-            <div>
+            <div className="overflow-x-auto">
                 <h3 className="text-xl font-bold my-3">Summary</h3>
                 <BonusSummaryDisplay bonusSummary={bonusSummary} tournament={tournament} />
             </div>
