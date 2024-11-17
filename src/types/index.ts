@@ -4,6 +4,7 @@ export type Tournament = {
     slug: string;
     question_set_edition_id: number;
     question_set_id: number;
+    question_set_slug: string;
     question_set: QuestionSet;
     location: string;
     level: string;

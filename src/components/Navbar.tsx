@@ -15,6 +15,8 @@ export default function Navbar({ tournament, questionSet }: NavbarProps) {
     const pathname = usePathname();
     let mainButton = <Link className="text-white font-bold" href={"/"}>Buzzpoints</Link>;
     let menuItems: any[] = [];
+    let switchLabel = '';
+    let switchUrl = '';
 
     if (tournament) {
         menuItems.push(...[
@@ -26,12 +28,16 @@ export default function Navbar({ tournament, questionSet }: NavbarProps) {
             { label: 'Categories (Bonus)', url: `/tournament/${tournament.slug}/category-bonus` },
         ]);
         mainButton = <Link className="text-white font-bold" href={`/tournament/${tournament.slug}`}>{tournament.name}</Link>
+        switchLabel = "View question set";
+        switchUrl = `/set/${tournament.question_set_slug}`;
     } else if (questionSet) {
         menuItems.push(...[
             { label: 'Tossups', url: `/set/${questionSet.slug}/tossup` },
             { label: 'Bonuses', url: `/set/${questionSet.slug}/bonus` },
         ]);
         mainButton = <Link className="text-white font-bold" href={`/set/${questionSet.slug}`}>{questionSet.name}</Link>
+        switchLabel = "View tournaments";
+        switchUrl = '/tournament';
     }
 
     return <nav className="bg-gray-500 sticky">
@@ -55,9 +61,14 @@ export default function Navbar({ tournament, questionSet }: NavbarProps) {
                         </div>
                     </div>
                 </div>
-                <div className="hidden md:block">
-                    <div className="ml-4 flex items-center md:ml-6">
-                    </div>
+                <div className="flex-shrink-0">
+                    <Link
+                        key={menuItems.length}
+                        className="text-gray-300 hover:text-white px-2 py-2 rounded-md text-sm font-medium"
+                        href={switchUrl}
+                    >
+                        {switchLabel}
+                    </Link>
                 </div>
                 <div className="-mr-2 flex md:hidden">
                     <button

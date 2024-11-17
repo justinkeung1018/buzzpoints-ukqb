@@ -280,6 +280,7 @@ export const getTournamentBySlugQuery = db.prepare(`
             tournament.name,
             tournament.slug,
             tournament.question_set_edition_id,
+            question_set.slug AS question_set_slug,
             question_set_edition.question_set_id,
             tournament.location,
             tournament.level,
@@ -287,6 +288,7 @@ export const getTournamentBySlugQuery = db.prepare(`
             tournament.end_date
     FROM    tournament
     JOIN    question_set_edition ON question_set_edition_id = question_set_edition.id
+    JOIN    question_set ON question_set.id = question_set_edition.question_set_id
     WHERE   tournament.slug = ?`);
 
 export const getTossupsByTournamentQuery = db.prepare(`
